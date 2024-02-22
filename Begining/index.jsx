@@ -6,3 +6,5 @@
 // for (i = 0; i <= 10; i++) {
 //     console.log(i)
 // }
+const colors = require('colors');
+console.log("hellow", red)
