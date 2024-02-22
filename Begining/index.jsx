@@ -7,4 +7,4 @@
 //     console.log(i)
 // }
 const colors = require('colors');
-console.log("hellow", red)
+console.log("hellow". red)
