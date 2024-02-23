@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+  
 app.get('/:name', (req, resp) => {
     resp.send(req?.params)
     resp.send("<h1>Home page....</h1>");
