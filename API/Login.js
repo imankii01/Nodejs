@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const cors = require('cors'); // Import the cors middleware
 
 const generateRandomSecretKey = () => {
     return crypto.randomBytes(32).toString('hex'); // Generates a 32-byte (256-bit) random key
@@ -13,6 +14,7 @@ console.log(generateRandomSecretKey());
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS for all routes
 
 mongoose.connect('mongodb://localhost/Login', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
@@ -93,7 +95,7 @@ app.get('/api/protected', (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
