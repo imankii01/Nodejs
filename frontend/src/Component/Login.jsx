@@ -1,11 +1,15 @@
 // LoginPage.js
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
+import { useDispatch } from 'react-redux';
+import { loginAction } from './../redux/Action/index';
 
 const LoginPage = () => {
+    const dispatch = useDispatch()
     const onFinish = (values) => {
         console.log('Received values:', values);
         // Add login logic here
+        dispatch(loginAction(values))
     };
 
     return (
@@ -80,7 +84,7 @@ const LoginPage = () => {
                             {/* Register Link */}
                             <p className="text-center register-test mt-3">
                                 Don't have an account?{" "}
-                                <a href="register-3.html" className="text-decoration-none">
+                                <a href="/signup" className="text-decoration-none">
                                     Register here
                                 </a>
                             </p>

@@ -1,0 +1,10 @@
+export const loginConstants = {
+    LOGIN_REQUEST: "LOGIN_REQUEST",
+    LOGIN_SUCCESS: "LOGIN_SUCCESS",
+    LOGIN_FAILURE: "LOGIN_FAILURE",
+};
+export const signupConstants = {
+    SIGNUP_REQUEST: "SIGNUP_REQUEST",
+    SIGNUP_SUCCESS: "SIGNUP_SUCCESS",
+    SIGNUP_FAILURE: "SIGNUP_FAILURE",
+};
