@@ -13,7 +13,12 @@ class Students{
 
     }
     setMarks(marks){
+       if(marks < 0 || marks > 100){
+        console.log("Invalid Marks")
+       }
+       else{
         this.marks=marks
+       }
     }
     getMarks(){
         return this.marks;
@@ -21,7 +26,6 @@ class Students{
 }
 var stud = new Students()
 stud.setMarks(2345)
-stud.setName("asdfasf")
 stud.setName("asdfadafasfda")
 console.log(stud.getName())
 console.log(stud.getMarks())
