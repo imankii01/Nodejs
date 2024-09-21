@@ -1,31 +1,25 @@
-class Students{
+function Students(name, marks) {
+    var s_name = name;
+    var s_marks = marks;
 
-    constructor(){
-        var name;
-        var marks;
-    }
-    getName(){
-        return this.name
+    Object.defineProperty(this, "name", {
+        get: function() {
+            return s_name;
+        },
+        set: function(newName) {
+            s_name = newName;
+        }
+    });
 
-    }
-    setName(name){
-        this.name = name
-
-    }
-    setMarks(marks){
-       if(marks < 0 || marks > 100){
-        console.log("Invalid Marks")
-       }
-       else{
-        this.marks=marks
-       }
-    }
-    getMarks(){
-        return this.marks;
-    }
+    Object.defineProperty(this, "marks", {
+        get: function() {
+            return s_marks;
+        },
+        set: function(newMarks) {
+            s_marks = newMarks;
+        }
+    });
 }
-var stud = new Students()
-stud.setMarks(2345)
-stud.setName("asdfadafasfda")
-console.log(stud.getName())
-console.log(stud.getMarks())
+
+var stud = new Students("john", 80);
+console.log(stud.name,stud.marks);
